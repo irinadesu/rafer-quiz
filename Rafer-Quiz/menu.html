@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Yes Efren's</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <nav>
+                <h3 class="logo">Yes Efren's</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card-1">
+            <div class="image">
+                <img id="y1" src="assets/menu/y1.png" >
+            </div>
+            <h4 id="code">Y1</h4>
+            <p id="price">Price: Php. 95</p>
+        </div>
+        <div class="card-2">
+            <div class="image">
+                <img id="img" src="assets/menu/y2.png" >
+            </div>
+            <h4 id="code">Y2</h4>
+            <p id="price">Price: Php. 139</p>
+        </div>
+        <div class="card-3">
+            <div class="image">
+                <img id="img" src="assets/menu/y3.png" >
+            </div>
+            <h4 id="code">Y3</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+        <div class="card-4">
+            <div class="image">
+                <img id="img" src="assets/menu/y4.png" >
+            </div>
+            <h4 id="code">Y4</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+        <div class="card-5">
+            <div class="image">
+                <img id="img" src="assets/menu/y5.png" >
+            </div>
+            <h4 id="code">Y5</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+        <div class="card-6">
+            <div class="image">
+                <img id="img" src="assets/menu/y6.png" >
+            </div>
+            <h4 id="code">Y6</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+        <div class="card-7">
+            <div class="image">
+                <img id="img" src="assets/menu/y7.png" >
+            </div>
+            <h4 id="code">Y7</h4>
+            <p id="price">Price: Php. 235</p>
+        </div>
+        <div class="card-8">
+            <div class="image">
+                <img id="img" src="assets/menu/y8.png" >
+            </div>
+            <h4 id="code">Y8</h4>
+            <p id="price">Price: Php. 229</p>
+        </div>
+        <div class="card-9">
+            <div class="image">
+                <img id="img" src="assets/menu/y9.png" >
+            </div>
+            <h4 id="code">Y9</h4>
+            <p id="price">Price: Php. 175</p>
+        </div>
+        <div class="card-10">
+            <div class="image">
+                <img id="img" src="assets/menu/y10.png" >
+            </div>
+            <h4 id="code">Y10</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+        <div class="card-11">
+            <div class="image">
+                <img id="img" src="assets/menu/y11.png" >
+            </div>
+            <h4 id="code">Y11</h4>
+            <p id="price">Price: Php. 135</p>
+        </div>
+        <div class="card-12">
+            <div class="image">
+                <img id="img" src="assets/menu/y12.png">
+            </div>
+            <h4 id="code">Y12</h4>
+            <p id="price">Price: Php. 129</p>
+        </div>
+    </div>
+
+    <div class="cart-modal-overlay">
+        <div class="cart-modal">
+            <i id="close-btn" class="fas fa-times"></i>
+            <div class="product-rows">
+            </div>
+        </div>
+
+    <script>
+            const preview = document.querySelectorAll('.img');
+            preview.forEach((button) => {
+                button.addEventListener('click', imgClicked);
+            });
+
+            function imgClicked(event) {
+                const button = event.target;
+                const cartItem = button.parentElement;
+                const price = cartItem.querySelector('.price').innerText;
+                const imageSrc = cartItem.querySelector('.image').src;
+                const desc = cartItem.querySelector(".code")
+                prev(price, imageSrc,desc);
+            }
+
+            function imgClicked(price, imageSrc,desc) {
+                const productRow = document.createElement('div');
+                productRow.classList.add('product-row');
+
+                const cartRows = document.querySelector('.product-rows');
+
+                productRow.innerHTML = `
+    <div class="product-row">
+      <img class="cart-image" src="${imageSrc}" alt="" "<br>">
+      <h3 class="cart-desc">${desc}</h3>
+      <p class="cart-price">${price}</p>
+    </div>
+  `;
+            }
+    </script>
+</body>
+
+</html>
